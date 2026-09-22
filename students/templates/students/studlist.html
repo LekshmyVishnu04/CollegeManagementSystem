@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Student List
+    </h1>
+    <nav align="left">
+        <a href="{% url 'students:add'%}">Click here to add Student</a>
+    </nav>
+    <nav align="right">
+        <a href="{% url 'students:home' welcome='welcome'%}">Back</a>
+    </nav>
+    <table border="2">
+        <tr>
+            <td colspan="3">Student Details</td>
+        </tr>
+        <tr>
+            <td>Student Name</td>
+            <td>Class Name</td>
+            <td>Division</td>
+        </tr>
+        {% for stud in data%}
+        <tr>
+            <td>{{stud.studentname}}</td>
+            <td>{{stud.classname}}</td>
+            <td>{{stud.division}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav align="right">
+        <a href="{%url 'teachers:home' 'welcome' %}">Back</a>
+
+    </nav>
+    <h1>Enter Teacher Details</h1>
+    <nav align="left">
+        <a href="{%url 'teachers:list' %}">Click here to view Teacher List</a>
+    </nav>
+
+    <form method="post">
+        {% csrf_token%}
+        {{form.as_p}}
+        <input type="submit" label='SAVE'>
+    </form>
+</body>
+
+</html>

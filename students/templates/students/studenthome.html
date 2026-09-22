@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to Students Portal</h1>
+    <p>{{message}}</p>
+
+    <nav align="right">
+        <a href="{% url 'home' %}">Back to College Portal</a>
+    </nav>
+    <nav>
+        <a href="{% url 'students:studlist'%}">Click here for studnet list</a>
+        <a href="{% url 'students:add'%}">Click here for Add Studnet</a>
+
+    </nav>
+</body>
+
+</html>
