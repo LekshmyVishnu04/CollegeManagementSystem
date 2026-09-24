@@ -21,5 +21,9 @@ from home import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('students/', include('students.urls')),
-    path('teachers/', include('teachers.urls'))
+    path('teachers/', include('teachers.urls')),
+    path('signup/', views.signup, name='signup'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('productsapi/', include('productsapi.urls'))
 ]

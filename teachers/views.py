@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import TeacherModelForm
 from .models import Teacher
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -9,11 +10,13 @@ def home(request, welcome):
     return render(request, 'teachers/teacherhome.html', {'welcome': welcome})
 
 
+@login_required(login_url='/login/')
 def list(request):
     data = Teacher.objects.all()
     return render(request, 'teachers/teacherlist.html', {'data': data})
 
 
+@login_required(login_url='/login/')
 def add(request):
     if request.method == 'POST':
         form = TeacherModelForm(request.POST)
